@@ -10,3 +10,6 @@ Die Eigentlichen Wiki Dateien sind Markdown files (.md), die dann von Pandoc in 
 
 Aus den eigentlichen Files wird im buildprocess auch eine statische Website erstellt, die alle Dokumente per Links verbindet. Zur erstellung der HTML-dateien werden die Latex-Formeln in Mathjax umgewandelt.
 
+## Vimwiki
+
+Persönliche nutze ich das Vim Plugin Vimwiki, um schnell und einfach neue Seiten zu erzeugen, und zwischen diesen umherzuspringen. Wichtig ist aber dass Links zu den Markdown dokumenten immer ein .md am Ende brauchen, damit der Website Build prozess diese in .html umändern kann.
