@@ -76,7 +76,7 @@ $\forall x \in V_1: \forall y \in V_1: (x,y) \in E_1 \iff ( \varphi(x),\varphi(y
 Dabei ist $|p|-1$ die *Länge* eines Pfades.
 
 
-**zu ungerichtetem Graphen gehöriger gerichteter Graph:** sei $G=(V,E)$ ein gerichteter Graph. Dann ist $(G,E_g)$ der dazugehörige ungerichtete Graph mit $E_g = \{(x,y) \,|\, \{x,y\} \in E\} \in V \times V$.
+**zu ungerichtetem Graphen gehöriger gerichteter Graph:** sei $G=(V,E)$ ein gerichteter Graph. Dann ist $(V,E_g)$ der dazugehörige ungerichtete Graph mit $E_g = \{(x,y) \,|\, \{x,y\} \in E\} \in V \times V$.
 
 ("pro Kante jeweils einen Pfeil in beide richtungen")
 
@@ -86,7 +86,7 @@ Dabei ist $|p|-1$ die *Länge* eines Pfades.
 
 $\forall x \in V_1: \forall y \in V_1: \{x,y\} \in E_1 \iff \{ \varphi(x),\varphi(y)\} \in E_2$
 
-**zu gerichtetem Graph gehöriger ungerichteter Graph:** sei $G=(V,E)$ ein ungerichteter Graph. Dann ist $(G,E_u)$ der dazugehörige gerichtete Graph mit $E_u = \{\{x,y\} \,|\, (x,y) \in E\}$.
+**zu gerichtetem Graph gehöriger ungerichteter Graph:** sei $G=(V,E)$ ein ungerichteter Graph. Dann ist $(V,E_u)$ der dazugehörige gerichtete Graph mit $E_u = \{\{x,y\} \,|\, (x,y) \in E\}$.
 
 ("entfernen aller Pfeilspitzen")
 
