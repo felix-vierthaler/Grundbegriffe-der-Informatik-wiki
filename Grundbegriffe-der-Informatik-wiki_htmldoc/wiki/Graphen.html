@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Graphen Zusammenfassung</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Graphen Zusammenfassung</h1>
+</header>
+<h2 id="gerichtete-graphen">Gerichtete Graphen</h2>
+<p><strong>gerichteter Graph:</strong> ein Paar <span class="math inline">\((V,E)\)</span> wobei <span class="math inline">\(E \subseteq V \times V\)</span> ist.</p>
+<p><strong>Knoten:</strong> Die Elemente in V heißen Knoten. (nicht leer und endlich)</p>
+<p><strong>Kanten:</strong> die Elemente in E heißen Kanten. (darf leer sein)</p>
+<p><strong>Adjazente Knoten:</strong> Die Knoten X und Y sind adjazent wenn <span class="math inline">\((X,Y) \in E\)</span>. (nicht symmetrisch)</p>
+<p><strong>Schlinge:</strong> Eine Kante bei der Start und Zielknoten gleich ist.</p>
+<p><strong>Schlingenfrei:</strong> Wenn ein Graph keine Schlinge beinhaltet.</p>
+<p><strong>Teilgraph:</strong> <span class="math inline">\(G&#39;=(V&#39;,E&#39;)\)</span> ist ein Teilgraph von <span class="math inline">\(G=(V,E)\)</span>, wenn <span class="math inline">\(V&#39; \subseteq V\)</span> und <span class="math inline">\(E&#39; \subseteq E \cap V&#39; \times V&#39;\)</span></p>
+<p><strong>Pfad:</strong> eine nichtleere Liste <span class="math inline">\(p=(v_0,\dots,v_n) \in V^{(+)}\)</span> von Knoten ist ein Pfad in einem gerichteten Graphen <span class="math inline">\(G=(V,E)\)</span>, wenn für alle <span class="math inline">\(i \in \mathbb{Z}_n\)</span> gilt: <span class="math inline">\((v,v_{i+1}) \in E\)</span>.</p>
+<p>Dabei ist <span class="math inline">\(|p|-1\)</span> die <em>Länge</em> eines Pfades.</p>
+<p>Man sagt auch dass <span class="math inline">\(v_n\)</span> von <span class="math inline">\(v_0\)</span> <em>erreichbar</em> ist.</p>
+<p><strong>Teilpfad:</strong> ein Pfad bei dem von beiden Seiten beliebig viele Knoten entfernt wurden.</p>
+<p><strong>widerholungsfreier Pfad:</strong> ein Pfad, bei dem die Knoten <span class="math inline">\(v_0,\dots,v_n\)</span> und die Knoten <span class="math inline">\(v_1,\dots,v_{n-1}\)</span> jeweils paarweise verschieden sind.</p>
+<p><strong>geschlossener Pfad:</strong> ein Pfad mit <span class="math inline">\(v_0=v_n\)</span>.</p>
+<p><strong>Zyklus:</strong> ein geschlossener Pfad mit <span class="math inline">\(n \geq 1\)</span></p>
+<p><strong>einfacher Zyklus:</strong> Ein Zyklus der <em>wiederholungsfrei</em> ist.</p>
+<p><strong>streng zusammenhängend:</strong> Ein gerichteter Graph, in dem es für jedes Knotenpaar <span class="math inline">\((x,y) \in V^2\)</span> einen Pfad von x nach y gibt. (genau dann wenn <span class="math inline">\(E^* = V \times V\)</span>)</p>
+<p><strong>Gerichteter Baum:</strong> ein Graph, in dem es einen Knoten <span class="math inline">\(r \in V\)</span> gibt, von dem es jeweils genau einen Pfad zu allen anderen Knoten gibt. (<span class="math inline">\(r\)</span> ist dabei eindeutig)</p>
+<p><strong>Wurzel:</strong> <span class="math inline">\(r\)</span> wird auch Wurzel genannt</p>
+<p><strong>Grad:</strong> Eingangsgrad + Ausgangsgrad</p>
+<ul>
+<li><p><strong>Eingangsgrad:</strong> <span class="math inline">\(d^-(y) = |\{x\,|\,(x,y) \in E\}|\,\)</span> (Anzahl der eingehenden Kanten)</p></li>
+<li><p><strong>Ausgangsgrad:</strong> <span class="math inline">\(d^+(y) = |\{y\,|\,(x,y) \in E\}|\,\)</span> (Anzahl der ausgehenden Kanten)</p></li>
+</ul>
+<p><strong>Isomorphie von Graphen:</strong> zwei Graphen <span class="math inline">\(G_1=(V_1,E_1)\)</span> und <span class="math inline">\(G_2=(V_2,E_2)\)</span> sind isomorph, wenn es eine bijektive Abbildung <span class="math inline">\(\varphi:V_1 \longrightarrow V_2\)</span> gibt, mit der Eigenschaft:</p>
+<p><span class="math inline">\(\forall x \in V_1: \forall y \in V_1: (x,y) \in E_1 \iff ( \varphi(x),\varphi(y)) \in E_2\)</span> (Äquivalenzrelation)</p>
+<h2 id="ungerichtete-graphen">Ungerichtete Graphen</h2>
+<p><strong>Ungerichteter Graph:</strong> Im gegensatz zu gerichteten Graphen ein Paar <span class="math inline">\((V,E)\)</span> wobei <span class="math inline">\(E \subseteq \{ \{x,y\} \,|\, x \in V und \, y \in V \}\)</span> ist.</p>
+<p><strong>Adjazente Knoten:</strong> zwei Knoten sind adjazent, wenn sie mit einer Kante miteinander verbunden sind.</p>
+<p><strong>Schlinge:</strong> Eine Kante bei der Start und Zielknoten gleich ist. Formal: <span class="math inline">\(\{x,y\}=\{x\}\)</span></p>
+<p><strong>Schlingenfrei:</strong> Wenn ein Graph keine Schlinge beinhaltet.</p>
+<p><strong>Teilgraph:</strong> <span class="math inline">\(G&#39;=(V&#39;,E&#39;)\)</span> ist ein Teilgraph von <span class="math inline">\(G=(V,E)\)</span>, wenn <span class="math inline">\(V&#39; \subseteq V\)</span> und <span class="math inline">\(E&#39; \subseteq E \cap \{ \{x,y\} \,|\, x \in V und \, y \in V \}\)</span></p>
+<p><strong>Weg:</strong> eine nichtleere Liste <span class="math inline">\(p=(v_0,\dots,v_1) \in V^{(+)}\)</span> von Knoten ist ein Weg, wenn für alle <span class="math inline">\(i \in \mathbb{Z}_n\)</span> gilt: <span class="math inline">\(\{v_i,v_{i+1}\} \in E\)</span>.</p>
+<p>Dabei ist <span class="math inline">\(|p|-1\)</span> die <em>Länge</em> eines Pfades.</p>
+<p><strong>zu ungerichtetem Graphen gehöriger gerichteter Graph:</strong> sei <span class="math inline">\(G=(V,E)\)</span> ein gerichteter Graph. Dann ist <span class="math inline">\((G,E_g)\)</span> der dazugehörige ungerichtete Graph mit <span class="math inline">\(E_g = \{(x,y) \,|\, \{x,y\} \in E\} \in V \times V\)</span>.</p>
+<p>(“pro Kante jeweils einen Pfeil in beide richtungen”)</p>
+<p><strong>zusammenhängend:</strong> wenn der zugehörige Gerichtete Graph streng zusammenhängen ist.</p>
+<p><strong>isomorph:</strong> zwei ungerichtete Graphen sind isomoroph, wenn die dazugehörigen gerichteten Graphen isomorph zueinander sind. (Äquivalenzrelation)</p>
+<p><span class="math inline">\(\forall x \in V_1: \forall y \in V_1: \{x,y\} \in E_1 \iff \{ \varphi(x),\varphi(y)\} \in E_2\)</span></p>
+<p><strong>zu gerichtetem Graph gehöriger ungerichteter Graph:</strong> sei <span class="math inline">\(G=(V,E)\)</span> ein ungerichteter Graph. Dann ist <span class="math inline">\((G,E_u)\)</span> der dazugehörige gerichtete Graph mit <span class="math inline">\(E_u = \{\{x,y\} \,|\, (x,y) \in E\}\)</span>.</p>
+<p>(“entfernen aller Pfeilspitzen”)</p>
+<p><strong>ungerichteter Baum:</strong> Ein ungerichteter Graph <span class="math inline">\(G\)</span> ist ein ungerichteter Baum, wenn es einen gerichteten Baum <span class="math inline">\(B\)</span> gibt, so dass der zu <span class="math inline">\(B\)</span> gehörige ungerichtete Graph gleich <span class="math inline">\(G\)</span> ist.</p>
+<p><strong>Grad:</strong> <span class="math display">\[ f(n) = d(x)=|\{y\,|\,y \ne x \wedge \{x,y\} \in E\}|+
+  \begin{cases}
+    2   &amp;  falls \{x,x\} \in E\\
+    0   &amp;  sonst 
+  \end{cases}
+\]</span> (“Anzahl der verbunden Knoten und +2, falls eine verbindung zu sich selbst besteht”)</p>
+<h2 id="algorithmen-in-graphen">Algorithmen in Graphen</h2>
+<p><strong>Adjazenzmatrix (gerichteter Graph):</strong> eine <span class="math inline">\(n \times n\)</span> Matrix <span class="math inline">\(A\)</span> mit der Eigenschaft:</p>
+<p>(gibt an, welche Knoten adjazent zueinander sind) <span class="math inline">\(A_{ij} = \begin{cases} 1 &amp; falls (i,j) \in E\\ 0 &amp; falls (i,j) \notin E \end{cases}\)</span></p>
+<p><strong>Adjazenzmatrix (ungerichteter Graph):</strong> Adjazenzmatrix des dazugehörigen gerichteten Graphen.</p>
+<p><strong>Wegematrix:</strong> eine <span class="math inline">\(n \times n\)</span> Matrix <span class="math inline">\(A\)</span> mit der Eigenschaft:</p>
+<p>(gibt an, zwischen welchen Knoten es Wege gibt) <span class="math inline">\(A_{ij} = \begin{cases} 1 &amp; falls (i,j) \in E^*\\ 0 &amp; falls (i,j) \notin E^* \end{cases}\)</span></p>
+<p><strong>Berechnung der Wegematrix:</strong> sei G ein gerichteter Graph mit Adjazenzmatrix A.</p>
+<p>sei <span class="math inline">\(k \geq n-1\)</span>, dann ist <span class="math inline">\(W = sgn(\sum_{i=0}^{k} A^i)\)</span> die Wegematrix von G, die <span class="math inline">\(E^*\)</span> representiert.</p>
+</body>
+</html>
