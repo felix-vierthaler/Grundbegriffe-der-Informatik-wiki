@@ -8,7 +8,7 @@ Die Eigentlichen Wiki Dateien sind Markdown files (.md), die dann von Pandoc in 
 
 ## Statische Website
 
-Aus den eigentlichen Files wird im buildprocess auch eine statische Website erstellt, die alle Dokumente per Links verbindet. Zur erstellung der HTML-dateien werden die Latex-Formeln in Mathjax umgewandelt.
+Aus den eigentlichen Files wird im buildprocess auch eine statische Website erstellt, die alle Dokumente per Links verbindet. Dazu nutze ich [md_htmldoc](https://github.com/MatrixManAtYrService/md_htmldoc). Zur erstellung der HTML-dateien werden die Latex-Formeln in Mathjax umgewandelt.
 
 Die generierte Website kann [hier](https://felix-vierthaler.github.io/Grundbegriffe-der-Informatik-wiki/) angeschaut werden.
 
