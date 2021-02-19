@@ -8,5 +8,5 @@ cd *wiki_htmldoc/
 rm README.html
 mv wiki/* .
 rm -rf wiki
-#cd ..
-#mv *wiki_htmldoc/index.html .
+cd ..
+mv *wiki_htmldoc docs
