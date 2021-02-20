@@ -2,11 +2,10 @@
 
 ### Zusammenfassung
 
-[Graphen](Graphen.md)
-
-[EndlicheAutomaten](EndlicheAutomaten.md)
-
-[Turingmaschiene](Turingmaschiene.md)
+- [Graphen](Graphen.md)
+- [Endliche Automaten](EndlicheAutomaten.md)
+- [Reguläre Ausdrücke und Rechtslineare Grammatiken](ReguläreAusdrücke.md)
+- [Turingmaschiene](Turingmaschiene.md)
 
 
 
