@@ -1,5 +1,5 @@
 ---
-title: "Graphen Zusammenfassung"
+title: "Endliche Automaten Zusammenfassung"
 lang: "de"
 header-includes: |
     \usepackage{amsfonts}

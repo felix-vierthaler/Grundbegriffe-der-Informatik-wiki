@@ -1,5 +1,5 @@
 ---
-title: "Turingmaschine"
+title: "Turingmaschine Zusammenfassung"
 lang: "de"
 header-includes: |
     \usepackage{amsfonts}
@@ -7,7 +7,9 @@ header-includes: |
 ...
 
 
-# Turingmaschine
+
+
+# Definition
 
 eine Turingmaschiene $T=(Z,z_0,X,f,g,m)$ besteht aus:
 
