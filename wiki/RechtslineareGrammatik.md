@@ -1,1 +1,0 @@
-rechtslineare Grammati
