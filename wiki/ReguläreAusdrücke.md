@@ -36,17 +36,34 @@ Das Weglassen von Klammern ist erlaubt, und es gilt "Stern vor Punkt" und "Punkt
 
 ## beschriebene Sprache
 
-Reguläre Ausdrücke werden genutzt, um formale Sprachen zu definieren. $\langle R \rangle$ ist die von einem Regulären Ausruck $R$ definierte Sprache und ist definiert als:
+Reguläre Ausdrücke werden genutzt, um formale Sprachen zu definieren. $\langle R \rangle$ ist die von einem Regulären Ausdruck $R$ definierte Sprache und ist definiert als:
 
 - $\langle \emptyset \rangle = \{\}$ (leere Menge)
 - Für $x \in A$ ist $\langle x \rangle = \{x\}$
 - Seien $R_1$ und $R_2$ reguläre Ausdräcke, dann gilt:
     - $\langle R_1 | R_2 \rangle = \langle R_1 \rangle \cup \langle R_2 \rangle$
     - $\langle R_1 R_2 \rangle = \langle R_1 \rangle \cdot \langle R_2 \rangle$
-- Sei $R$ ein regulärer Ausruck, dann ist $\langle R* \rangle = \langle R \rangle ^*$
+- Sei $R$ ein regulärer Ausdruck, dann ist $\langle R* \rangle = \langle R \rangle ^*$
 
 
 (die gleiche Formale Sprache kann durch verschieden reguläre Ausdrücke beschrieben werden.)
+
+## Beispiele
+
+**ohne Klammerregeln:**
+
+- $\emptyset$
+- $(ab)$
+- $(\emptyset \,|\, b)$
+- $((ab)(aa))$
+- $(((((ab)b)*)*)|(\emptyset *))$
+
+**mit Klammerregeln:**
+
+- $ab$
+- $a**$
+- $(abb)**\,|\,\emptyset *$
+- $(bababaaaaaaaab)*(aaaaabaaa\,|\, abababaab)(abab)*$
 
 # Rechtslineare Grammatiken
 
@@ -67,7 +84,7 @@ mit $w \in T^*$ und $X,Y \in N$
 Für jede formale Sprache sind äquivalent:
 
 1. $L$ kann von einem endlichen Akzeptor erkannt werden.$
-2. $L$ kann durch einen regulären Ausruck beschrieben werden.
+2. $L$ kann durch einen regulären Ausdruck beschrieben werden.
 3. $L$ kann von einer rechtslinearen Grammatik erzeugt werden.
 
 Sprachen mit diesen Eigenschaft werden auch *reguläre Sprachen* genannt. Außerdem ist jede Reguläre Sprache automatisch eine kontextfreie Sprache, da rechtslineare Grammatiken kontextfreie Grammatiken sind.
@@ -80,18 +97,10 @@ Sprachen mit diesen Eigenschaft werden auch *reguläre Sprachen* genannt. Außer
 
 wenn eine formale Sprache $L$ von einer *Typ-i-Grammatik* erzeugt wird, nennt man die Sprache auch eine *Typ-i-Sprache*.
 
+# Kantorowitsch-Bäume
 
+Reguläre Ausrücke können auch als *Kantorowitsch-Bäume* (Regex-Bäume) dargestellt werden.
 
+**Beispiel** zum regulären Ausdruck $((b\,|\,\emptyset)a)(b*)$:
 
-
-
-
-
-
-
-
-
-
-Wirds als charakterisierung endlicher Akzeptoren genutzt.
-
-
+![Regex-Graph Beispiel](pictures/regexbaum.png){width=60%}
