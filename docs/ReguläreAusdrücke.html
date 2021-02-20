@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Regulare Ausdrücke und Rechtslineare Grammatiken</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Regulare Ausdrücke und Rechtslineare Grammatiken</h1>
+</header>
+<h1 id="reguläre-ausrücke">Reguläre Ausrücke</h1>
+<ul>
+<li>Alphabet <span class="math inline">\(Z= \{|,(,),*, \emptyset \}\)</span></li>
+<li>Alphabet <span class="math inline">\(A\)</span>, welches keine Elemente aus <span class="math inline">\(Z\)</span> enthält</li>
+</ul>
+<p>Ein Regulärer Ausdruck über <span class="math inline">\(A\)</span> ist eine Zeichenfolge über dem Alphabet <span class="math inline">\(A \cup Z\)</span>, definiert als:</p>
+<ul>
+<li><span class="math inline">\(\emptyset\)</span> ist ein regulärer Ausdruck</li>
+<li>Alle Elemente in A sind reguläre Ausrücke</li>
+<li>Wenn <span class="math inline">\(R\)</span>, <span class="math inline">\(R_1\)</span> und <span class="math inline">\(R_2\)</span> regulärer Ausdrücke sind, dann sind auch reguläre Ausrücke:
+<ul>
+<li><span class="math inline">\((R*)\)</span></li>
+<li><span class="math inline">\((R_1|R_2)\)</span></li>
+<li><span class="math inline">\((R_1R_2)\)</span></li>
+</ul></li>
+</ul>
+<p>(sonst ist nichts ein Regulärer Ausdruck)</p>
+<h2 id="beschreibung-durch-kontextfreie-grammatik">Beschreibung durch Kontextfreie Grammatik</h2>
+<p>Die Sprache aller syntaktisch korrekten regulären Ausrücke kann auch mit einer Kontextfreien Grammatik beschrieben werden:</p>
+<p><span class="math inline">\(G=(\{R\},\{|,(,),*,\emptyset\}\cup A,R,P)\)</span></p>
+<p><span class="math inline">\(P=\{R \longrightarrow \emptyset, R \longrightarrow (R\,|\,R), R \longrightarrow (RR), R\longrightarrow (R*)\}\cup\{R\longrightarrow x \,|\, x\in A\}\)</span></p>
+<h2 id="klammerregeln">Klammerregeln</h2>
+<p>Das Weglassen von Klammern ist erlaubt, und es gilt “Stern vor Punkt” und “Punkt vor Strichrechnung”.</p>
+<h2 id="beschriebene-sprache">beschriebene Sprache</h2>
+<p>Reguläre Ausdrücke werden genutzt, um formale Sprachen zu definieren. <span class="math inline">\(\langle R \rangle\)</span> ist die von einem Regulären Ausdruck <span class="math inline">\(R\)</span> definierte Sprache und ist definiert als:</p>
+<ul>
+<li><span class="math inline">\(\langle \emptyset \rangle = \{\}\)</span> (leere Menge)</li>
+<li>Für <span class="math inline">\(x \in A\)</span> ist <span class="math inline">\(\langle x \rangle = \{x\}\)</span></li>
+<li>Seien <span class="math inline">\(R_1\)</span> und <span class="math inline">\(R_2\)</span> reguläre Ausdräcke, dann gilt:
+<ul>
+<li><span class="math inline">\(\langle R_1 | R_2 \rangle = \langle R_1 \rangle \cup \langle R_2 \rangle\)</span></li>
+<li><span class="math inline">\(\langle R_1 R_2 \rangle = \langle R_1 \rangle \cdot \langle R_2 \rangle\)</span></li>
+</ul></li>
+<li>Sei <span class="math inline">\(R\)</span> ein regulärer Ausdruck, dann ist <span class="math inline">\(\langle R* \rangle = \langle R \rangle ^*\)</span></li>
+</ul>
+<p>(die gleiche Formale Sprache kann durch verschieden reguläre Ausdrücke beschrieben werden.)</p>
+<h2 id="beispiele">Beispiele</h2>
+<p><strong>ohne Klammerregeln:</strong></p>
+<ul>
+<li><span class="math inline">\(\emptyset\)</span></li>
+<li><span class="math inline">\((ab)\)</span></li>
+<li><span class="math inline">\((\emptyset \,|\, b)\)</span></li>
+<li><span class="math inline">\(((ab)(aa))\)</span></li>
+<li><span class="math inline">\((((((ab)b)*)*)|(\emptyset *))\)</span></li>
+</ul>
+<p><strong>mit Klammerregeln:</strong></p>
+<ul>
+<li><span class="math inline">\(ab\)</span></li>
+<li><span class="math inline">\(a**\)</span></li>
+<li><span class="math inline">\((abb)**\,|\,\emptyset *\)</span></li>
+<li><span class="math inline">\((bababaaaaaaaab)*(aaaaabaaa\,|\, abababaab)(abab)*\)</span></li>
+</ul>
+<h1 id="rechtslineare-grammatiken">Rechtslineare Grammatiken</h1>
+<p>eine Rechtslineare Grammatik ist eine kontextfreie Grammatik mit gewissen einschränkungen, sodass die erzeugten Sprachen immer regulär sind. Es kann genau jede reguläre Sprache mit einer Rechtslinearen Grammatik erzeugt werden.</p>
+<p>Eine kontextfreie Grammatik <span class="math inline">\(G=(N,T,S,P)\)</span> ist eine rechtslineare Grammatik, wenn jede Produktion eine dieser Formen hat:</p>
+<ul>
+<li><span class="math inline">\(X \longrightarrow w\)</span></li>
+<li><span class="math inline">\(X \longrightarrow wY\)</span></li>
+</ul>
+<p>mit <span class="math inline">\(w \in T^*\)</span> und <span class="math inline">\(X,Y \in N\)</span></p>
+<p>(“Jede Produktion darf maximal ein neues Nichtterminalsymbol einführen, und das nur ganz am Ende”)</p>
+<h1 id="zusammenhänge-von-regulären-sprachen">Zusammenhänge von regulären Sprachen</h1>
+<p>Für jede formale Sprache sind äquivalent:</p>
+<ol type="1">
+<li><span class="math inline">\(L\)</span> kann von einem endlichen Akzeptor erkannt werden.$</li>
+<li><span class="math inline">\(L\)</span> kann durch einen regulären Ausdruck beschrieben werden.</li>
+<li><span class="math inline">\(L\)</span> kann von einer rechtslinearen Grammatik erzeugt werden.</li>
+</ol>
+<p>Sprachen mit diesen Eigenschaft werden auch <em>reguläre Sprachen</em> genannt. Außerdem ist jede Reguläre Sprache automatisch eine kontextfreie Sprache, da rechtslineare Grammatiken kontextfreie Grammatiken sind.</p>
+<h1 id="alternative-benennung">alternative benennung</h1>
+<ul>
+<li>Kontextfreie Grammatiken = <em>Typ-2-Grammatiken</em></li>
+<li>Rechtslineare Grammatiken = <em>Typ-3-Grammatiken</em></li>
+<li>(in späteren Vorlesungen noch mehr)</li>
+</ul>
+<p>wenn eine formale Sprache <span class="math inline">\(L\)</span> von einer <em>Typ-i-Grammatik</em> erzeugt wird, nennt man die Sprache auch eine <em>Typ-i-Sprache</em>.</p>
+<h1 id="kantorowitsch-bäume">Kantorowitsch-Bäume</h1>
+<p>Reguläre Ausrücke können auch als <em>Kantorowitsch-Bäume</em> (Regex-Bäume) dargestellt werden.</p>
+<p><strong>Beispiel</strong> zum regulären Ausdruck <span class="math inline">\(((b\,|\,\emptyset)a)(b*)\)</span>:</p>
+<figure>
+<img src="pictures/regexbaum.png" style="width:60.0%" alt="Regex-Graph Beispiel" /><figcaption aria-hidden="true">Regex-Graph Beispiel</figcaption>
+</figure>
+</body>
+</html>
