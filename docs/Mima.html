@@ -155,11 +155,12 @@
 </header>
 <h1 id="einfache-hardwarebausteine">einfache Hardwarebausteine</h1>
 <p><strong>Draht:</strong> Ein Draht führt von einem <em>Erzeuger</em> zu einem <em>Verbraucher</em> und kann die Zustände 0, 1 oder <em>nichts</em>(Z) haben.</p>
-<p>Ein Verbraucher hat einen <em>Eingang</em> auf dem er ein Bit lesen kann. Ein Erzeuger hat einen Ausgang auf dem er ein Bit schreiben kann. Beide können durch einen Draht verbunden werden. Ein Draht kann also seinen Zustand nicht speichern, sondern hat immer genau das Bit des Erzeugers, an den er angeschlossen ist.</p>
+<p>Ein Verbraucher hat einen <em>Eingang</em> auf dem er ein Bit lesen kann. Ein Erzeuger hat einen Ausgang auf dem er ein Bit schreiben kann.</p>
+<p>Beide können durch einen Draht verbunden werden. Ein Draht kann also seinen Zustand nicht speichern, sondern hat immer genau das Bit des Erzeugers, an den er angeschlossen ist.</p>
 <p><strong>Bus:</strong> <em>Drähte</em> können beliebig aneinandergeschlossen werden. Zum Beispiel wenn mehrere Enden verschiedener Drähte zusammengeführt werden. So entsteht ein Bus.</p>
 <p>So kann ein Erzeuger zum Beispiel mehrere Verbraucher mit einem Bit versorgen. Außerem dürfen auch mehrere Verbraucher mit mehreren Erzeugern verbunden werden. Jedoch gibt es ein paar Regeln:</p>
 <ul>
-<li>zu jedem Zeitpunkt der jeder höchstens ein Erzeuger ein Bit übertragen.</li>
+<li>zu jedem Zeitpunkt darf höchstens ein Erzeuger ein Bit übertragen.</li>
 <li>wenn ein Bit von einem Erzeuger übertragen wird, kann es jeder Verbraucher lesen.</li>
 </ul>
 <p><strong>Speicher:</strong> Ein Speicher besteht aus:</p>
@@ -207,8 +208,8 @@
 <p><strong>Befehlsdecodierphase:</strong> Hier wird der Befehl decodiert. Die 8 höchstwertigen Bits des Speicherwortes codieren den auszuführenden Maschinenbefehl. In abhängigkeit von diesen 8 Bit und dem höchstwertigen Bit des Akkumulators verzweigt das Steuerwerk zu dem zum Maschienenbefehl zugehörigen Mikroprogramm.</p>
 <p><strong>Befehlsausführungsphase:</strong> hier wird das zum Befehl dazugehörige Mikroprogramm ausgeführt.</p>
 <h1 id="mima-programmbeispiel">MIMA Programmbeispiel</h1>
-<p>Konkrete Addressen werden durch Labels ersetzt und len wird mit der Länge der Liste vorinitialisiert.</p>
-<p>Das Programm summiert die Elemente einer Liste von Zahlen.</p>
+<p>Dieses Programm summiert die Elemente einer Liste von Zahlen.</p>
+<p>Konkrete Addressen werden zur vereinfachung durch Labels ersetzt und <em>len</em> wird mit der Länge der Liste vorinitialisiert.</p>
 <figure>
 <img src="pictures/mimabeispiel.png" style="width:80.0%" alt="Mima-Programm Quelle:GBI Skript" /><figcaption aria-hidden="true">Mima-Programm Quelle:GBI Skript</figcaption>
 </figure>

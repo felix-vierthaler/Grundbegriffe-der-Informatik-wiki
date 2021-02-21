@@ -10,13 +10,15 @@ header-includes: |
 
 **Draht:** Ein Draht führt von einem *Erzeuger* zu einem *Verbraucher* und kann die Zustände 0, 1 oder *nichts*(Z) haben. 
 
-Ein Verbraucher hat einen *Eingang* auf dem er ein Bit lesen kann. Ein Erzeuger hat einen Ausgang auf dem er ein Bit schreiben kann. Beide können durch einen Draht verbunden werden. Ein Draht kann also seinen Zustand nicht speichern, sondern hat immer genau das Bit des Erzeugers, an den er angeschlossen ist.
+Ein Verbraucher hat einen *Eingang* auf dem er ein Bit lesen kann. Ein Erzeuger hat einen Ausgang auf dem er ein Bit schreiben kann. 
+
+Beide können durch einen Draht verbunden werden. Ein Draht kann also seinen Zustand nicht speichern, sondern hat immer genau das Bit des Erzeugers, an den er angeschlossen ist.
 
 **Bus:** *Drähte* können beliebig aneinandergeschlossen werden. Zum Beispiel wenn mehrere Enden verschiedener Drähte zusammengeführt werden. So entsteht ein Bus.
 
 So kann ein Erzeuger zum Beispiel mehrere Verbraucher mit einem Bit versorgen. Außerem dürfen auch mehrere Verbraucher mit mehreren Erzeugern verbunden werden. Jedoch gibt es ein paar Regeln:
 
-- zu jedem Zeitpunkt der jeder höchstens ein Erzeuger ein Bit übertragen.
+- zu jedem Zeitpunkt darf höchstens ein Erzeuger ein Bit übertragen.
 - wenn ein Bit von einem Erzeuger übertragen wird, kann es jeder Verbraucher lesen.
 
 **Speicher:** Ein Speicher besteht aus:
@@ -91,8 +93,8 @@ Die Ausführung jedes Mikroprogramms besteht aus drei Phasen:
 
 # MIMA Programmbeispiel
 
-Konkrete Addressen werden durch Labels ersetzt und len wird mit der Länge der Liste vorinitialisiert.
+Dieses Programm summiert die Elemente einer Liste von Zahlen.
 
-Das Programm summiert die Elemente einer Liste von Zahlen.
+Konkrete Addressen werden zur vereinfachung durch Labels ersetzt und *len* wird mit der Länge der Liste vorinitialisiert.
 
 ![Mima-Programm Quelle:GBI Skript](pictures/mimabeispiel.png){width=80%}
