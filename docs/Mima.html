@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>MIMA Zusammenfassung</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">MIMA Zusammenfassung</h1>
+</header>
+<h1 id="einfache-hardwarebausteine">einfache Hardwarebausteine</h1>
+<p><strong>Draht:</strong> Ein Draht führt von einem <em>Erzeuger</em> zu einem <em>Verbraucher</em> und kann die Zustände 0, 1 oder <em>nichts</em>(Z) haben.</p>
+<p>Ein Verbraucher hat einen <em>Eingang</em> auf dem er ein Bit lesen kann. Ein Erzeuger hat einen Ausgang auf dem er ein Bit schreiben kann. Beide können durch einen Draht verbunden werden. Ein Draht kann also seinen Zustand nicht speichern, sondern hat immer genau das Bit des Erzeugers, an den er angeschlossen ist.</p>
+<p><strong>Bus:</strong> <em>Drähte</em> können beliebig aneinandergeschlossen werden. Zum Beispiel wenn mehrere Enden verschiedener Drähte zusammengeführt werden. So entsteht ein Bus.</p>
+<p>So kann ein Erzeuger zum Beispiel mehrere Verbraucher mit einem Bit versorgen. Außerem dürfen auch mehrere Verbraucher mit mehreren Erzeugern verbunden werden. Jedoch gibt es ein paar Regeln:</p>
+<ul>
+<li>zu jedem Zeitpunkt der jeder höchstens ein Erzeuger ein Bit übertragen.</li>
+<li>wenn ein Bit von einem Erzeuger übertragen wird, kann es jeder Verbraucher lesen.</li>
+</ul>
+<p><strong>Speicher:</strong> Ein Speicher besteht aus:</p>
+<ul>
+<li>interner Speicher M, der im Zustand 0 oder 1 ist.</li>
+<li><em>Eingang:</em> Datenleitung zum entgegennehmen eines zu Speichernden Bit (<span class="math inline">\(D_i\)</span>), wenn Steuerleitung <span class="math inline">\(S_w\)</span> auf 1 ist.</li>
+<li><em>Ausgang:</em> Datenleitung zum ausgeben eines gespeicherten Bits (<span class="math inline">\(D_0\)</span>), wenn Steuerleitung <span class="math inline">\(S_r\)</span> auf 1 ist.</li>
+</ul>
+<p>Dabei ist wichtig dass niemals gleichzeitig <span class="math inline">\(S_w\)</span> und <span class="math inline">\(S_r\)</span> auf 1 gesetzt werden.</p>
+<p><strong>Register:</strong> Ein Register sind mehrere parallel geschaltete <em>Speicher</em>, wobei immer gleichzeitig auf alle Speicherelemente zugegriffen wird indem alle <span class="math inline">\(S_w\)</span> und <span class="math inline">\(S_r\)</span> Leitungen gleichzeitig angesprochen werden.</p>
+<h1 id="mima">MIMA</h1>
+<p><strong>Von-Neumann-Architektur:</strong> Die Mima basiert auf der Von-Neumann-Architektur, welche besagt, dass alle Komponenten an einen zentralen Bus angeschlossen sind.</p>
+<h2 id="baugruppen">Baugruppen</h2>
+<p><strong>Steuerwerk:</strong> Das Steuerwerk regelt den Ablauf im Prozessor.</p>
+<ul>
+<li>Speichert im Instruktionsregister (IR) den aktuellen Maschienenbefehl.</li>
+<li>Speichert im Instruktionsadressregister (IAR) die Adresse des nächsten auszuführenden Befehls.</li>
+</ul>
+<p>Ein Befehlt wird hier erst <em>dekodiert</em> und dann <em>ausgeführt</em>.</p>
+<p><strong>Rechenwerk:</strong> Das Rechenwerk führt die eigentlichen berechnungen durch. Daführ erhält es in den Registern X und Y jeweilige Eingabedaten, sowie einen <em>Operations-Code</em> vom Steuerwerk, der angibt, welche Operation auf den Daten ausgeführt werden soll. Am ende wird das Ergebnis in das Register Z geschrieben.</p>
+<p><strong>Akkumulator:</strong> Nach den meisten berechnungen des Rechenwerkes wird das Ergebnis der Rechnung noch in den Akkumulator geschrieben. Dieser ist das wichtigste Register zum Speichern von zwischenergebnissen.</p>
+<p><strong>Speicherwerk:</strong> verbindung des Prozessors zum Hauptspeicher. Zum einen sind hier die Maschienenbefehle des Programms gespeichert, zum anderen auch Daten die vom Programm verarbeitet werden sollen.</p>
+<p><strong>Hauptspeicher:</strong> Der Hauptspeicher der Mima ist mit 20 Bit addressierbar und hat somit <span class="math inline">\(2^{20}\)</span> Adressen. Jede Adresse speichert ein 24 Bit langes wort, welches auch Speicherwort genannt wird.</p>
+<h2 id="maschinenfehle-der-mima">Maschinenfehle der Mima</h2>
+<p>Programme für die Mima bestehen aus sogenannten <em>Maschinenbefehlen</em>, die aus dem Speicher geladen und ausgeführt werden können. Im eigentlichen Speicher werden diese Maschienenbefehle als 24 Bit-Folgen gespeichert. Jedoch gibt es zur einfacheren repräsentation eine art Symbolische Notation.</p>
+<figure>
+<img src="pictures/mimabefehlssatz.png" style="width:60.0%" alt="Mima Befehlssatz Quelle:(GBI Vorlesung)" /><figcaption aria-hidden="true">Mima Befehlssatz Quelle:(GBI Vorlesung)</figcaption>
+</figure>
+<h3 id="weitere-befehle">weitere Befehle:</h3>
+<p>Sprungbefehle:</p>
+<ul>
+<li><em>JMP a</em> - führt Programm bei Addresse a fort.</li>
+<li><em>JMN a</em> - springt nur, wenn erstes Bit des Akkumulators gleich 1 ist.</li>
+</ul>
+<p><em>EQL a</em> - schreibt <span class="math inline">\(Akku = 111 \dots 111\)</span>, wenn <span class="math inline">\(M(a)=Akku\)</span>. Sonst wird <span class="math inline">\(Akku = 000 \dots 000\)</span>.</p>
+<p><em>Halt</em> - Programm hält an.</p>
+<h1 id="mikroprogrammsteuerung-der-mima">Mikroprogrammsteuerung der MIMA</h1>
+<p><strong>Mikrobefehl:</strong> Jedem Befehl sind Elementare Anweisungen zugeordnet, die die Mima schritt für schritt ausführen kann. Nach der Ausführung eines Befehls wird das IAR um eins erhöht.</p>
+<p><strong>Mikroprogramm:</strong> Programme, die aus einer Folge von mikrobefehlen bestehen.</p>
+<p><strong>Steuersignale:</strong> Signale die von dem Steuerwerk über Steuerleitungen z.B. an Register oder den externen Hauptspeicher geleitet werden, um dort einen Wert zu Lesen oder zu Schreiben.</p>
+<p><strong>Meldesignale:</strong> Signale, die über Meldeleitungen zum Steuerwerk hingeleitet werden, damit dieses auf Ereignisse reagieren kann.</p>
+<h2 id="befehlsphasen">Befehlsphasen</h2>
+<p>Die Ausführung jedes Mikroprogramms besteht aus drei Phasen:</p>
+<p><strong>Befehlsholphase:</strong> Der nächste Maschienenbefehl wird aus dem Speicher ins Register <em>IR</em> geholt. Außerdem wird die Addresse des potenziell nächsten Befehls berechnet (<span class="math inline">\(IAR++\)</span>). Jedoch kann sich die tatsächlich nächste Addresse während der Ausführung des Befehls noch ändern (z.B. bei <em>JM</em>).</p>
+<p><strong>Befehlsdecodierphase:</strong> Hier wird der Befehl decodiert. Die 8 höchstwertigen Bits des Speicherwortes codieren den auszuführenden Maschinenbefehl. In abhängigkeit von diesen 8 Bit und dem höchstwertigen Bit des Akkumulators verzweigt das Steuerwerk zu dem zum Maschienenbefehl zugehörigen Mikroprogramm.</p>
+<p><strong>Befehlsausführungsphase:</strong> hier wird das zum Befehl dazugehörige Mikroprogramm ausgeführt.</p>
+<h1 id="mima-programmbeispiel">MIMA Programmbeispiel</h1>
+<p>Konkrete Addressen werden durch Labels ersetzt und len wird mit der Länge der Liste vorinitialisiert.</p>
+<p>Das Programm summiert die Elemente einer Liste von Zahlen.</p>
+<figure>
+<img src="pictures/mimabeispiel.png" style="width:80.0%" alt="Mima-Programm Quelle:GBI Skript" /><figcaption aria-hidden="true">Mima-Programm Quelle:GBI Skript</figcaption>
+</figure>
+</body>
+</html>
