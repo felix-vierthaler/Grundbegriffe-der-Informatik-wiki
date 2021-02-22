@@ -2,6 +2,7 @@
 
 ### Zusammenfassung
 
+- [Übersetzung und Codierung](ÜbersetzungUndCodierung.md)
 - [Mima](Mima.md)
 - [Kontextfreie Grammatik](KontextfreieGrammatik.md)
 - [Graphen](Graphen.md)

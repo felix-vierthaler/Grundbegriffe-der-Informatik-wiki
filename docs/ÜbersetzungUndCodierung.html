@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Übersetzung und Codierung</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Übersetzung und Codierung</h1>
+</header>
+<h1 id="zahlendarstellungen">Zahlendarstellungen</h1>
+<h2 id="dezimaldarstellung">Dezimaldarstellung</h2>
+<p>Wir sind es gewohnt Zahlen in Dezimaldarstellung zu representieren. Wir definieren eine Abbildung <span class="math inline">\(num_{10}\)</span>, die aus der Dezimaldarstellung einer Zahl wieder eine Zahl macht.</p>
+<figure>
+<img src="pictures/num10.png" style="width:70.0%" alt="Quelle:GBI Skript" /><figcaption aria-hidden="true">Quelle:GBI Skript</figcaption>
+</figure>
+<p>in der ersten Zeile stehen Zeichen, und in der zweiten Zeile stehen Zahlen. Genauer gesagt stehen in der ersten Zeile Zeichen, die für sich stehen und in der zweiten Zeile stehen Zeichen die als Zahlen representiert werden sollen.</p>
+<p>Die Abbildung <span class="math inline">\(num_{10}: Z_{10} \longrightarrow \mathbb{Z}_{10}\)</span> macht also aus einem Zeichen eine Zahl.</p>
+<p>Dazu wird <span class="math inline">\(Num_{10}:Z_{10}^* \longrightarrow \mathbb{N}_0\)</span> induktiv definiert als:</p>
+<p><span class="math display">\[\begin{align}
+    Num_{10}(\epsilon) &amp;= 0\\
+    \forall w\in Z_{10}^* \forall x \in Z_{10} : Num_{10}(wx) &amp;= 10 \cdot Num_{10}(w) + num_{10}(x) 
+\end{align}\]</span></p>
+<h2 id="binärdarstellung">Binärdarstellung</h2>
+<p>Die Natürlichen Zahlen können auch mit nur zwei verschiedenen Ziffern <span class="math inline">\(0\)</span> und <span class="math inline">\(1\)</span> dargestellt werden. Dazu geht man bei der Definition analog zur Dezimaldarstellung vor:</p>
+<p>Als Ziffernmenge nutzt man <span class="math inline">\(Z_2 = \{0,1\}\)</span> und definiert:</p>
+<p><span class="math display">\[\begin{align}
+    num_{2}(0) &amp;= 0\\
+    num_{2}(1) &amp;= 1\\
+    Num_2(\epsilon) &amp;= 0\\
+    \forall w\in Z_2^* \forall x \in Z_{2} : Num_2(wx) &amp;= 2 \cdot Num_2(w) + num_2(x) 
+\end{align}\]</span></p>
+<h3 id="beispiel">Beispiel</h3>
+<p><span class="math inline">\(num_2(00001101) = 8+4+0\cdot 2+1=13\)</span></p>
+<p><span class="math inline">\(num_2(10100) = 16+0\cdot 8+4+0\cdot 2+0\cdot 1= 20\)</span></p>
+<h2 id="hexadezimaldarstellung">Hexadezimaldarstellung</h2>
+<p>Bei der Hexadezimaldarstellung nutzt man 16 Ziffern des Alphabetes <span class="math inline">\(Z_{16} =\{ 0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F\}\)</span> (manchmal auch Kleinbuchstaben)</p>
+<figure>
+<img src="pictures/hexadecimal.png" style="width:70.0%" alt="Quelle:GBI Skript" /><figcaption aria-hidden="true">Quelle:GBI Skript</figcaption>
+</figure>
+<p>Die Zuordnung von Wörtern zu Zahlen ist dann gegeben durch:</p>
+<p><span class="math inline">\(\forall w\in Z_{16}^* \forall x \in Z_{16} : Num_{16}(wx) = 16 \cdot Num_{16}(w) + num_{16}(x)\)</span></p>
+<h3 id="beispiel-1">Beispiel</h3>
+<p><span class="math inline">\(num_{16}(AB) = 16^1 \cdot 10 + 16^0 \cdot 12 = 172\)</span></p>
+<p><span class="math inline">\(num_{16}(BC2) = 16^2 \cdot 11 + 16^1 \cdot 12 + 16^0 \cdot 2\)</span></p>
+<h1 id="k-äre-representation">k-äre Representation</h1>
+<p><span class="math inline">\(Repr_k\)</span> ist ein Abbildung, die eine beliebige Zahl als Eingabe bekommt und die Representation der Zahl zur Basis <span class="math inline">\(k\)</span> zurückgibt.</p>
+<p>Man benutzt ein Alphabet <span class="math inline">\(Z_k\)</span> mit k Ziffern, deren Bedeutung die Zahlen in <span class="math inline">\(\mathbb{Z}_k\)</span> sind. Für <span class="math inline">\(i \in \mathbb{Z}_k\)</span> sei <span class="math inline">\(repr_k(i)\)</span> dann dieses Zeichen. <span class="math inline">\(repr_k\)</span> ist also genau die Umkehrfunktion zu <span class="math inline">\(num_k\)</span>.</p>
+<p>Repr wird dann so definiert:</p>
+<p><span class="math display">\[ Repr_k(n) =
+  \begin{cases}
+    repr_k(n)  &amp;  falls\, n &lt; k\\
+    Repr_k(n \,div\, k) \cdot repr_k(n \,mod\, k) &amp; falls\, n \ge k
+  \end{cases}
+\]</span></p>
+<p>Es gilt: <span class="math inline">\(Num_k(Repr_k(n))=n\)</span></p>
+<p>Umgekehr gilt das aber im Allgemeinen nicht, da führende Nullen bei der Operation <span class="math inline">\(Num_k\)</span> wegfallen.</p>
+<h1 id="zweierkomplement">Zweierkomplement</h1>
+<h2 id="bin">bin</h2>
+<p>Als erstes benötigen wir eine Abbildung, die eine Zahl binär darstellt, aber mit einer festen Länge. Denn zum Beispiel in der MIMA haben die Speicherregister eine feste Länge, weshalb dort nur Werte mit dieser Länge gespeichert werden können.</p>
+<p><span class="math inline">\(bin_l\)</span> ist definiert als:</p>
+<p><span class="math inline">\(bin_l:\mathbb{Z}_{2^l} \longrightarrow \{0,1\}^l, bin_l(n) = 0^{l-|Repr_2(n)|} Repr_2(n)\)</span></p>
+<p>Es werden also einfach so viele nullen von vorne aufgefüllt, dass <span class="math inline">\(|bin_l(n)|=l\)</span> gilt.</p>
+<h2 id="zkpl">Zkpl</h2>
+<p>Da aber auch negative Zahlen dargestellt werden sollen, wird dafür das Zweierkomplement genutzt, was so definiert ist:</p>
+<p><span class="math display">\[Zkpl_l(x)=
+  \begin{cases}
+    0\, bin_{l-1}(x) &amp; falls \, x \ge 0\\
+    1\, bin_{l-1}(2^{l-1}+x) &amp; falls \, x &lt; 0
+  \end{cases} 
+\]</span></p>
+<p>Negative Zahlen haben somit eine <span class="math inline">\(0\)</span> an erster Stelle und positive Zahlen eine <span class="math inline">\(1\)</span>. Der Vorteil von der Zweierkomplementdarstellung ist, dass mit positiven, sowie negativen Zahlen ganz natürlich addiert werden kann.</p>
+<p><strong>Menge aller Representierbaren Zahlen:</strong> Die Menge der im Zweierkomplement representierbaren Zahlen ist definiert als <span class="math inline">\(\mathbb{K}_l = \{ x \in \mathbb{Z}\,|\, -2^{l-1} \le x \le 2^{l-1} -1\}\)</span></p>
+<p>Man kann sich das Zweierkomplement auch wie eine Uhr vorstellen:</p>
+<figure>
+<img src="pictures/zweierkomplement.png" style="width:40.0%" alt="Zweierkomplement Uhr" /><figcaption aria-hidden="true">Zweierkomplement Uhr</figcaption>
+</figure>
+<h1 id="übersetzung">Übersetzung</h1>
+<p>Eine Übersetzung ist eine Zuordnung von Wörtern einer Sprache zu Wörtern einer anderen Sprache, sodass das Ausgangswort und dessen Übersetzung die selbe Bedeutung haben.</p>
+<p><strong>sem:</strong> <span class="math inline">\(sem(w)\)</span> ist die Bedeutung von einem Wort <span class="math inline">\(w\)</span>. Diese kann so etwas einfaches sein wie eine Zahl, oder etwas kompliziertes wie die Ausführung eines Java-Programs.</p>
+<p><strong>Übersetzung:</strong> seien <span class="math inline">\(A\)</span> und <span class="math inline">\(B\)</span> zwei Alphabete und zwei Abbildungen <span class="math inline">\(sem_A:L_A \rightarrow Sem\)</span> und <span class="math inline">\(sem_B:L_B \rightarrow Sem\)</span> von zwei Formalen Sprachen in die selbe Menge von Bedeutungen.</p>
+<p>Eine Abbildung <span class="math inline">\(f:L_A \longrightarrow L_B\)</span> heißt Übersetzung bezüglich <span class="math inline">\(sem_A\)</span> und <span class="math inline">\(sem_B\)</span>, wenn <span class="math inline">\(f\)</span> die Bedeutung erhält, also:</p>
+<p><span class="math inline">\(\forall w \in L_A: sem_A(w) =sem_B(f(w))\)</span></p>
+<p><strong>Codierung:</strong> Eine injektive Übersetzung wird auch Codierung genannt.</p>
+<p><strong>Codewort:</strong> Für ein <span class="math inline">\(w \in L_A\)</span> wird <span class="math inline">\(f(w)\)</span> <em>Codewort</em> genannt.</p>
+<p><strong>Code:</strong> Die Menge <span class="math inline">\(\{f(w) \,|\, w \in L_A\}\)</span> aller Codewörter werden auch <em>Code</em> genannt.</p>
+<p>Eine möglichkeit um Codierungen vollständig zu Spezifizieren ohne jedes Wort einzeln angeben zu müssen sind z.B. Huffman-Codes oder Homomorphismen.</p>
+<p><strong>Homomorphismus:</strong> seien <span class="math inline">\(A\)</span> und <span class="math inline">\(B\)</span> zwei Alphabete und <span class="math inline">\(h:A^* \longrightarrow B^*\)</span> eine Abbildung. <span class="math inline">\(h\)</span> ist dann ein Homomorphismus, wenn für jedes <span class="math inline">\(w_1 \in A^*\)</span> und jedes <span class="math inline">\(w_2 \in A^*\)</span> gilt:</p>
+<p><span class="math inline">\(h(w_1 w_2)=h(w_1)h(w_2)\)</span></p>
+<p><strong>Epsilon-freier Homomorphismus:</strong> Ein Homomorphismus ist <em>Epsilon-frei</em>, wenn für alle <span class="math inline">\(x \in A\)</span> gilt: <span class="math inline">\(h(x) \neq \epsilon\)</span></p>
+<p><strong>Präfixfrei:</strong> Für einen Homomorphismus ist meist nicht einfach zu sagen, ob er eine Codierung ist. Wenn <span class="math inline">\(h\)</span> jedoch <em>präfixfrei</em> ist, kann man direkt sage dass <span class="math inline">\(h\)</span> auch eine Codierung ist. <span class="math inline">\(h\)</span> ist präfixfrei, wenn für keine zwei verschiedene Symbole <span class="math inline">\(x_1,x_2 \in A\)</span> gilt: <span class="math inline">\(h(x_1)\)</span> ist ein Präfix von <span class="math inline">\(h(x_2)\)</span></p>
+<p><strong>Decodierung von Präfixfreien codes:</strong> Präfixfreie Codes sind besonderst einfach zu decodieren. Jedoch ist zu Beachten, dass nicht alle Wörter aus <span class="math inline">\(B^*\)</span> ein Codewort sind, da <span class="math inline">\(h\)</span> im allgemeinen nicht surjektiv ist.</p>
+<p>Um die Decodierung trotzdem als totale Abbildung definieren zu können führen wir das Symbol <span class="math inline">\(\perp\)</span> ein. Dieses wird benutzt, wenn ein <span class="math inline">\(w \in B^*\)</span> nicht decodiert werden kann. Die Decodierung ist nun die Abbildung:</p>
+<p><span class="math inline">\(u:B^* \longrightarrow (A \cup \{\perp\})^*\)</span></p>
+<p>falls ein <span class="math inline">\(w \in B^*\)</span> nicht definiert ist, soll <span class="math inline">\(u(w)\)</span> das Symbol <span class="math inline">\(\perp\)</span> sein.</p>
+<h2 id="gründe-für-übersetzungen">Gründe für Übersetzungen:</h2>
+<ul>
+<li>Kompression</li>
+<li>Fehlererkennung/Fehlerkorrektur</li>
+<li>Lesbarkeit</li>
+</ul>
+</body>
+</html>
