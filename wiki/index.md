@@ -3,6 +3,7 @@
 ### Zusammenfassung
 
 - [Mima](Mima.md)
+- [Kontextfreie Grammatik](KontextfreieGrammatik.md)
 - [Graphen](Graphen.md)
 - [Endliche Automaten](EndlicheAutomaten.md)
 - [Reguläre Ausdrücke und Rechtslineare Grammatiken](ReguläreAusdrücke.md)
@@ -13,8 +14,6 @@
 
 - [x] implement website generator
  
-- [x] Reguläre Ausrücke u. rechtslineare Grammatiken
 - [ ] Turingmaschine berechnungskomplexität
 - [ ] Prädikatenlogik
-- [ ] Kontextfreie Grammatik
 - [ ] Übersetzung u. Codierung
