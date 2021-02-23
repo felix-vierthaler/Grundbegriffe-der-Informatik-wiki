@@ -157,3 +157,40 @@ falls ein $w \in B^*$ nicht definiert ist, soll $u(w)$ das Symbol $\perp$ sein.
 - Kompression
 - Fehlererkennung/Fehlerkorrektur
 - Lesbarkeit
+
+# Huffman Codierung
+
+- Huffman-Codes sind die kürzesten präfixfreien Codes die es gibt.
+- ein Huffman-code ist nicht eindeutig
+- die Codierung wird dabei auf das Eingabewort angepasst
+- Zeichen die öfter vorkommen werden mit einem kürzeren Codewort versehen.
+
+## Berechnung von Huffman-codes
+
+Es ist ein Wort $w$ gegeben.
+
+1. für jedes vorkommende Zeichen in $w$ wird die Anzahl der Vorkommen dieses Zeichnes herausgeschrieben.
+2. Diese Zahlen werden nach größe sortiert aufgeschrieben. (zusätzlich wird das Zeichen daneben geschrieben)
+3. Jetzt werden die beiden kleinsten Zahlen durch Äste nach oben verbunden und der Knoten bekommt als Beschriftung die Summe der beiden Ausgangswerte.
+4. schritt 3 wird mit allen Knoten wiederholt, bis es eine Wurzel gibt.
+5. Die Kanten des Graphen  die nach links gehen, werden jetzt mit nullen beschriftet, und die Kanten die nach rechts gehen mit einsen.
+6. Jetzt kann der Code für jedes Zeichen entlang der Kanten abgelesen werden.
+
+## Beispiel
+
+sei $w=afebfecaffdeddccefbeff$, ein Wort. Dann ergibt sich durch den Algorithmus zur Berechnung eines Huffman-Codes der folgende Baum:
+
+![Huffman Baum Quelle:GBI Skript](pictures/huffmanbaum.png){width=60%}
+
+Von diesem Baum kann dann wiederem der Folgende Code abgelesen werden:
+
+- a = 000
+- b = 001
+- c = 100
+- d = 101
+- e = 01
+- f = 11
+
+## Blockcodierung
+
+Eine Blockcodierung ist eine Huffman-Codierung, die statt einzelnen Zeichen ganze Blöcker einer festen Länge nutzt.

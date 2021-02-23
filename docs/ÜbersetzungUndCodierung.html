@@ -244,5 +244,38 @@
 <li>Fehlererkennung/Fehlerkorrektur</li>
 <li>Lesbarkeit</li>
 </ul>
+<h1 id="huffman-codierung">Huffman Codierung</h1>
+<ul>
+<li>Huffman-Codes sind die kürzesten präfixfreien Codes die es gibt.</li>
+<li>ein Huffman-code ist nicht eindeutig</li>
+<li>die Codierung wird dabei auf das Eingabewort angepasst</li>
+<li>Zeichen die öfter vorkommen werden mit einem kürzeren Codewort versehen.</li>
+</ul>
+<h2 id="berechnung-von-huffman-codes">Berechnung von Huffman-codes</h2>
+<p>Es ist ein Wort <span class="math inline">\(w\)</span> gegeben.</p>
+<ol type="1">
+<li>für jedes vorkommende Zeichen in <span class="math inline">\(w\)</span> wird die Anzahl der Vorkommen dieses Zeichnes herausgeschrieben.</li>
+<li>Diese Zahlen werden nach größe sortiert aufgeschrieben. (zusätzlich wird das Zeichen daneben geschrieben)</li>
+<li>Jetzt werden die beiden kleinsten Zahlen durch Äste nach oben verbunden und der Knoten bekommt als Beschriftung die Summe der beiden Ausgangswerte.</li>
+<li>schritt 3 wird mit allen Knoten wiederholt, bis es eine Wurzel gibt.</li>
+<li>Die Kanten des Graphen die nach links gehen, werden jetzt mit nullen beschriftet, und die Kanten die nach rechts gehen mit einsen.</li>
+<li>Jetzt kann der Code für jedes Zeichen entlang der Kanten abgelesen werden.</li>
+</ol>
+<h2 id="beispiel-2">Beispiel</h2>
+<p>sei <span class="math inline">\(w=afebfecaffdeddccefbeff\)</span>, ein Wort. Dann ergibt sich durch den Algorithmus zur Berechnung eines Huffman-Codes der folgende Baum:</p>
+<figure>
+<img src="pictures/huffmanbaum.png" style="width:60.0%" alt="Huffman Baum Quelle:GBI Skript" /><figcaption aria-hidden="true">Huffman Baum Quelle:GBI Skript</figcaption>
+</figure>
+<p>Von diesem Baum kann dann wiederem der Folgende Code abgelesen werden:</p>
+<ul>
+<li>a = 000</li>
+<li>b = 001</li>
+<li>c = 100</li>
+<li>d = 101</li>
+<li>e = 01</li>
+<li>f = 11</li>
+</ul>
+<h2 id="blockcodierung">Blockcodierung</h2>
+<p>Eine Blockcodierung ist eine Huffman-Codierung, die statt einzelnen Zeichen ganze Blöcker einer festen Länge nutzt.</p>
 </body>
 </html>

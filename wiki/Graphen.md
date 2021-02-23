@@ -40,6 +40,10 @@ Man sagt auch dass $v_n$ von $v_0$ *erreichbar* ist.
 
 **einfacher Zyklus:** Ein Zyklus der *wiederholungsfrei* ist.
 
+**zyklischer Graph:** Ein Graph, der Zyklen enthält.
+
+**azyklischer Graph:** Ein Graph, der keine Zyklen enthält.
+
 **streng zusammenhängend:** Ein gerichteter Graph, in dem es für jedes Knotenpaar $(x,y) \in V^2$ einen Pfad von x nach y gibt. (genau dann wenn $E^* = V \times V$)
 
 **Gerichteter Baum:** ein Graph, in dem es einen Knoten  $r \in V$ gibt, von dem es jeweils genau einen Pfad zu allen anderen Knoten gibt. ($r$ ist dabei eindeutig)
